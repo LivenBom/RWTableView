@@ -1,5 +1,5 @@
 # RWTableView
-![logo_txt](/Users/yyk/Desktop/logo_txt.png)
+![](https://upload-images.jianshu.io/upload_images/1923392-e67290890a05ec3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 # 如何写好一个tableView，提高代码复用，提高开发效率
 
@@ -12,7 +12,7 @@ tableview 是开发中项目中常用的视图控件，并且是重复的使用�
 delegate ：负责交互事件；
 datasource ：负责cell创建及数据填充，这也是本文探讨的重点。
 （1）基本原则
-苹果将tableView的数据通过一个`二维数组构建(组，行)`，这是一个很重要的设计点，要沿着这套规则继续发展，设计模式的继承，才是避免坏代码的产生的基础。
+苹果将tableView的数据通过一个`二维数组构建(组，行)`，这是一个很重要的设计点，要沿着这套规则继续发展，设计模式的继承，才是避免坏代码产生的基础。
 （2）组
 `“组”是这套逻辑的根基`，`先有组再有行`，并且列表动态修改的内容都是以`行`为基础，`组`的结构相对固定，因此本文将`组`抽离成一个`数据模型`，`而不是接口`。
 ```
@@ -40,7 +40,7 @@ datasource ：负责cell创建及数据填充，这也是本文探讨的重点�
 ```
 （2）行
 `行`最核心的有三大`Cell`、`Cell高度`、`Cell数据`。
-这次的设计的基于MVVM设计模式，对于行的要素提取成一个ViewModel，并且`ViewModel`要做成`接口`的方式，因为行除了这三个基本的元素外，可能要需要Cell填充的数据，比如titleString，subTitleString，headerImage等等，这样便于扩展。
+这次的设计参考MVVM设计模式，对于行的要素提取成一个ViewModel，并且`ViewModel`要做成`接口`的方式，因为行除了这三个基本的元素外，可能要需要Cell填充的数据，比如titleString，subTitleString，headerImage等等，这样便于扩展。
 
 ```
 #ifndef RWCellViewModel_h
@@ -161,11 +161,20 @@ RWTableview.m
 @end
 ```
 
+[完整代码](https://github.com/CallLiven/RWTableView)
+
+
 #特别感谢以下作者写的文章，给我很多启发
 [峰之巅：iOS 高效开发解决方案](https://juejin.im/post/6844904003633938440)
+
 [donggelaile：一站式搭建各种滑动列表(Objective-C)](https://juejin.im/post/6844903925242396685)
+
 [基于MVVM，用于快速搭建设置页，个人信息页的框架](https://juejin.im/post/6844903470638563336)
+
 [利用MVVM设计快速开发个人中心、设置等模块](https://www.shuzhiduo.com/A/LPdoY9OwJ3/)
+
 [如何优雅的插入广告](https://github.com/MeetYouDevs/IMYAOPTableView)
+
 [iOS面向切面的TableView-AOPTableView](https://www.jianshu.com/p/ead76a50f107)
-[iOS面向切面的TableView-AOPTableView](https://www.jianshu.com/p/d71767e16562)
+
+[iOS面向切面的TableView-AOPTableView](https://www.jianshu.com/p/d71767e16562)https://www.jianshu.com/p/d71767e16562)
