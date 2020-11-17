@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		33A68BFE25554F6100D21A2D /* RWButtonCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A68BFD25554F6100D21A2D /* RWButtonCellViewModel.m */; };
 		33A68C052555528000D21A2D /* RWEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A68C042555528000D21A2D /* RWEvent.m */; };
 		33A68C0E2555529400D21A2D /* UIResponder+RWEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A68C0D2555529400D21A2D /* UIResponder+RWEvent.m */; };
+		B8C40D1FD3E09BA0BB08E2AC /* libPods-RWStaticTableView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5751551E3BEF8578B6DFF4 /* libPods-RWStaticTableView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17829FA27A59DCDD92F530EC /* Pods-RWStaticTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RWStaticTableView.release.xcconfig"; path = "Target Support Files/Pods-RWStaticTableView/Pods-RWStaticTableView.release.xcconfig"; sourceTree = "<group>"; };
 		33A68B3D2553EBF500D21A2D /* RWStaticTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWStaticTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A68B402553EBF500D21A2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33A68B412553EBF500D21A2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -83,6 +85,8 @@
 		33A68C0C2555529400D21A2D /* UIResponder+RWEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+RWEvent.h"; sourceTree = "<group>"; };
 		33A68C0D2555529400D21A2D /* UIResponder+RWEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+RWEvent.m"; sourceTree = "<group>"; };
 		33D7D40A2559386E00AC9098 /* RWHeaderFooterDataSourceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWHeaderFooterDataSourceProtocol.h; sourceTree = "<group>"; };
+		57B52545183A8942435B9B8A /* Pods-RWStaticTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RWStaticTableView.debug.xcconfig"; path = "Target Support Files/Pods-RWStaticTableView/Pods-RWStaticTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		FD5751551E3BEF8578B6DFF4 /* libPods-RWStaticTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RWStaticTableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C40D1FD3E09BA0BB08E2AC /* libPods-RWStaticTableView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187A131E621222F10AD99BBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57B52545183A8942435B9B8A /* Pods-RWStaticTableView.debug.xcconfig */,
+				17829FA27A59DCDD92F530EC /* Pods-RWStaticTableView.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		33A16CB6255929EF0072D099 /* RWTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +145,8 @@
 				33A68B5B2553EBF900D21A2D /* RWStaticTableViewTests */,
 				33A68B662553EBF900D21A2D /* RWStaticTableViewUITests */,
 				33A68B3E2553EBF500D21A2D /* Products */,
+				187A131E621222F10AD99BBE /* Pods */,
+				A450236FD08DA9A400C0870C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +234,14 @@
 			path = RWEvent;
 			sourceTree = "<group>";
 		};
+		A450236FD08DA9A400C0870C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD5751551E3BEF8578B6DFF4 /* libPods-RWStaticTableView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33A68B6C2553EBF900D21A2D /* Build configuration list for PBXNativeTarget "RWStaticTableView" */;
 			buildPhases = (
+				A34A9D5F790A7653709DF888 /* [CP] Check Pods Manifest.lock */,
 				33A68B392553EBF500D21A2D /* Sources */,
 				33A68B3A2553EBF500D21A2D /* Frameworks */,
 				33A68B3B2553EBF500D21A2D /* Resources */,
+				E9714DDC7717CE8AC5751C15 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,6 +368,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A34A9D5F790A7653709DF888 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RWStaticTableView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9714DDC7717CE8AC5751C15 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RWStaticTableView/Pods-RWStaticTableView-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RWStaticTableView/Pods-RWStaticTableView-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RWStaticTableView/Pods-RWStaticTableView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33A68B392553EBF500D21A2D /* Sources */ = {
@@ -528,6 +596,7 @@
 		};
 		33A68B6D2553EBF900D21A2D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57B52545183A8942435B9B8A /* Pods-RWStaticTableView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -546,6 +615,7 @@
 		};
 		33A68B6E2553EBF900D21A2D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17829FA27A59DCDD92F530EC /* Pods-RWStaticTableView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

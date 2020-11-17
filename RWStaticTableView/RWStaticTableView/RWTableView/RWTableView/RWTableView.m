@@ -90,8 +90,13 @@
     RWSectionModel *sectionModel = [self.dataArray objectAtIndex:indexPath.section];
     id<RWCellViewModel>cellViewModel = [sectionModel.itemsArray objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellViewModel.cellClass)];
+    /// Cell创建
     if (cell == nil) {
         cell = [[cellViewModel.cellClass alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellViewModel.cellClass)];
+    }
+    /// Cell赋值
+    if ([cell respondsToSelector:@selector(rw_setData:)]) {
+        [cell performSelector:@selector(rw_setData:) withObject:cellViewModel];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -109,10 +114,6 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell <RWCellDataSource>*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     RWSectionModel *sectionModel = [self.dataArray objectAtIndex:indexPath.section];
     id<RWCellViewModel>cellViewModel = [sectionModel.itemsArray objectAtIndex:indexPath.row];
-    /// Cell赋值
-    if ([cell respondsToSelector:@selector(rw_setData:)]) {
-        [cell rw_setData:cellViewModel];
-    }
     /// 高度缓存
     /// 此处高度做一个缓存是为了高度自适应的Cell，重复计算的工作量，
     /// 同时可以避免由于高度自适应导致Cell的定位不准确，比如置顶或者滑动到某一个Cell的位置
