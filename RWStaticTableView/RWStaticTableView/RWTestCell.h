@@ -6,11 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RWCellDataSourceProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RWTestCell : UITableViewCell<RWCellDataSource>
+@interface RWTestCell : UITableViewCell
 
 @end
 

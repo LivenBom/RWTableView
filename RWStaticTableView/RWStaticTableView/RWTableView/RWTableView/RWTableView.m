@@ -7,10 +7,10 @@
 
 #import "RWTableView.h"
 #import "RWCellViewModelProtocol.h"
-#import "RWCellDataSourceProtocol.h"
-#import "RWHeaderFooterDataSourceProtocol.h"
-
 #import "RWSectionModel.h"
+
+#import "UITableViewCell+RWData.h"
+#import "UITableViewHeaderFooterView+RWData.h"
 
 @interface RWTableView()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSArray *dataArray;
@@ -37,6 +37,7 @@
                   tableViewStyle:(UITableViewStyle)style {
     self = [super initWithFrame:CGRectZero style:style];
     if (self) {
+        [self configTableView];
         self.rwdelegate = delegate;
     }
     return self;
@@ -95,9 +96,7 @@
         cell = [[cellViewModel.cellClass alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellViewModel.cellClass)];
     }
     /// Cell赋值
-    if ([cell respondsToSelector:@selector(rw_setData:)]) {
-        [cell performSelector:@selector(rw_setData:) withObject:cellViewModel];
-    }
+    [cell rw_setData:cellViewModel];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -105,21 +104,19 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     RWSectionModel *sectionModel = [self.dataArray objectAtIndex:indexPath.section];
     id<RWCellViewModel>cellViewModel = [sectionModel.itemsArray objectAtIndex:indexPath.row];
-    if (cellViewModel.cellHeight == 0) {
-        return UITableViewAutomaticDimension;
-    }
-    return cellViewModel.cellHeight;
+    return cellViewModel.cellHeight ? : UITableViewAutomaticDimension;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell <RWCellDataSource>*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     RWSectionModel *sectionModel = [self.dataArray objectAtIndex:indexPath.section];
     id<RWCellViewModel>cellViewModel = [sectionModel.itemsArray objectAtIndex:indexPath.row];
     /// 高度缓存
-    /// 此处高度做一个缓存是为了高度自适应的Cell，重复计算的工作量，
+    /// 此处高度做一个缓存是为了高度自适应的Cell，避免重复计算的工作量，对于性能优化有些帮助
+    /// 如果想要在willDisplayCell获取到准确的Cell高度，那么必须在cellForRowAtIndexPath:方法给Cell赋值
     /// 同时可以避免由于高度自适应导致Cell的定位不准确，比如置顶或者滑动到某一个Cell的位置
+    /// 如果自动布局要更新高度，可以将cellViewModel设置为0
     cellViewModel.cellHeight = cell.frame.size.height;
 }
-
 
 
 # pragma mark - 头部和尾部处理
@@ -142,9 +139,7 @@
     if (headerView == nil) {
         headerView = [[sectionModel.headerReuseClass alloc]initWithReuseIdentifier: NSStringFromClass(sectionModel.headerReuseClass)];
     }
-    if ([headerView respondsToSelector:@selector(rw_setData:)]) {
-        [headerView performSelector:@selector(rw_setData:) withObject:sectionModel.headerData];
-    }
+    [headerView rw_setData:sectionModel.headerData];
     return headerView;
 }
 
@@ -157,9 +152,7 @@
     if (footerView == nil) {
         footerView = [[sectionModel.footerReuseClass alloc]initWithReuseIdentifier: NSStringFromClass(sectionModel.footerReuseClass)];
     }
-    if ([footerView respondsToSelector:@selector(rw_setData:)]) {
-        [footerView performSelector:@selector(rw_setData:) withObject:sectionModel.footerData];
-    }
+    [footerView rw_setData:sectionModel.footerData];
     return footerView;
 }
 

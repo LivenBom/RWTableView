@@ -16,9 +16,9 @@
 @property (nonatomic, assign) CGFloat  sectionHeaderHeight;
 /// section尾部高度
 @property (nonatomic, assign) CGFloat  sectionFooterHeight;
-/// sectionHeaderView： 必须是UITableViewHeaderFooterView或其子类，并且遵循RWHeaderFooterDataSource协议
+/// sectionHeaderView：rw_setData:是赋值方法
 @property (nonatomic, strong) Class headerReuseClass;
-/// sectionFooterView： 必须是UITableViewHeaderFooterView或其子类，并且遵循RWHeaderFooterDataSource协议
+/// sectionFooterView： rw_setData:是赋值方法
 @property (nonatomic, strong) Class footerReuseClass;
 
 /// headerData

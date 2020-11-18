@@ -25,6 +25,8 @@
 		33A68BFE25554F6100D21A2D /* RWButtonCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A68BFD25554F6100D21A2D /* RWButtonCellViewModel.m */; };
 		33A68C052555528000D21A2D /* RWEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A68C042555528000D21A2D /* RWEvent.m */; };
 		33A68C0E2555529400D21A2D /* UIResponder+RWEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A68C0D2555529400D21A2D /* UIResponder+RWEvent.m */; };
+		33EE3ECC2564BE0C00392E25 /* UITableViewCell+RWData.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EE3ECB2564BE0C00392E25 /* UITableViewCell+RWData.m */; };
+		33EE3ED22564BEA400392E25 /* UITableViewHeaderFooterView+RWData.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EE3ED12564BEA400392E25 /* UITableViewHeaderFooterView+RWData.m */; };
 		B8C40D1FD3E09BA0BB08E2AC /* libPods-RWStaticTableView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5751551E3BEF8578B6DFF4 /* libPods-RWStaticTableView.a */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +72,6 @@
 		33A68BAB2554F04900D21A2D /* RWSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWSectionModel.h; sourceTree = "<group>"; };
 		33A68BAC2554F04900D21A2D /* RWSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWSectionModel.m; sourceTree = "<group>"; };
 		33A68BC7255521F500D21A2D /* RWCellViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWCellViewModelProtocol.h; sourceTree = "<group>"; };
-		33A68BDA2555382F00D21A2D /* RWCellDataSourceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWCellDataSourceProtocol.h; sourceTree = "<group>"; };
 		33A68BE4255540FE00D21A2D /* RWTestCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWTestCellViewModel.h; sourceTree = "<group>"; };
 		33A68BE5255540FE00D21A2D /* RWTestCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTestCellViewModel.m; sourceTree = "<group>"; };
 		33A68BEA2555419B00D21A2D /* RWTestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWTestCell.h; sourceTree = "<group>"; };
@@ -84,7 +85,10 @@
 		33A68C042555528000D21A2D /* RWEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWEvent.m; sourceTree = "<group>"; };
 		33A68C0C2555529400D21A2D /* UIResponder+RWEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+RWEvent.h"; sourceTree = "<group>"; };
 		33A68C0D2555529400D21A2D /* UIResponder+RWEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+RWEvent.m"; sourceTree = "<group>"; };
-		33D7D40A2559386E00AC9098 /* RWHeaderFooterDataSourceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWHeaderFooterDataSourceProtocol.h; sourceTree = "<group>"; };
+		33EE3ECA2564BE0C00392E25 /* UITableViewCell+RWData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+RWData.h"; sourceTree = "<group>"; };
+		33EE3ECB2564BE0C00392E25 /* UITableViewCell+RWData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+RWData.m"; sourceTree = "<group>"; };
+		33EE3ED02564BEA400392E25 /* UITableViewHeaderFooterView+RWData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewHeaderFooterView+RWData.h"; sourceTree = "<group>"; };
+		33EE3ED12564BEA400392E25 /* UITableViewHeaderFooterView+RWData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+RWData.m"; sourceTree = "<group>"; };
 		57B52545183A8942435B9B8A /* Pods-RWStaticTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RWStaticTableView.debug.xcconfig"; path = "Target Support Files/Pods-RWStaticTableView/Pods-RWStaticTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		FD5751551E3BEF8578B6DFF4 /* libPods-RWStaticTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RWStaticTableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,9 +135,11 @@
 				33A68B8E2554ED5100D21A2D /* RWTableView.m */,
 				33A68BAB2554F04900D21A2D /* RWSectionModel.h */,
 				33A68BAC2554F04900D21A2D /* RWSectionModel.m */,
+				33EE3ECA2564BE0C00392E25 /* UITableViewCell+RWData.h */,
+				33EE3ECB2564BE0C00392E25 /* UITableViewCell+RWData.m */,
+				33EE3ED02564BEA400392E25 /* UITableViewHeaderFooterView+RWData.h */,
+				33EE3ED12564BEA400392E25 /* UITableViewHeaderFooterView+RWData.m */,
 				33A68BC7255521F500D21A2D /* RWCellViewModelProtocol.h */,
-				33A68BDA2555382F00D21A2D /* RWCellDataSourceProtocol.h */,
-				33D7D40A2559386E00AC9098 /* RWHeaderFooterDataSourceProtocol.h */,
 			);
 			path = RWTableView;
 			sourceTree = "<group>";
@@ -419,8 +425,10 @@
 				33A68C052555528000D21A2D /* RWEvent.m in Sources */,
 				33A68BEC2555419B00D21A2D /* RWTestCell.m in Sources */,
 				33A68C0E2555529400D21A2D /* UIResponder+RWEvent.m in Sources */,
+				33EE3ED22564BEA400392E25 /* UITableViewHeaderFooterView+RWData.m in Sources */,
 				33A68BFE25554F6100D21A2D /* RWButtonCellViewModel.m in Sources */,
 				33A68B482553EBF500D21A2D /* ViewController.m in Sources */,
+				33EE3ECC2564BE0C00392E25 /* UITableViewCell+RWData.m in Sources */,
 				33A68B422553EBF500D21A2D /* AppDelegate.m in Sources */,
 				33A68B532553EBF800D21A2D /* main.m in Sources */,
 				33A68BF825554E7000D21A2D /* RWButtonCell.m in Sources */,
