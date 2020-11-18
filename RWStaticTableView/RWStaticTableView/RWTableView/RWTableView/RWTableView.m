@@ -87,7 +87,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    /// 此处只做Cell的复用或创建
     RWSectionModel *sectionModel = [self.dataArray objectAtIndex:indexPath.section];
     id<RWCellViewModel>cellViewModel = [sectionModel.itemsArray objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellViewModel.cellClass)];
@@ -135,7 +134,7 @@
     if (sectionModel.headerReuseClass == nil){
         return [UIView new];
     }
-    UITableViewHeaderFooterView *headerView = [[UITableViewHeaderFooterView alloc]initWithReuseIdentifier:NSStringFromClass(sectionModel.headerReuseClass)];
+    UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass(sectionModel.headerReuseClass)];
     if (headerView == nil) {
         headerView = [[sectionModel.headerReuseClass alloc]initWithReuseIdentifier: NSStringFromClass(sectionModel.headerReuseClass)];
     }
@@ -148,7 +147,7 @@
     if (sectionModel.footerReuseClass == nil){
         return [UIView new];
     }
-    UITableViewHeaderFooterView *footerView = [[UITableViewHeaderFooterView alloc]initWithReuseIdentifier:NSStringFromClass(sectionModel.footerReuseClass)];
+    UITableViewHeaderFooterView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass(sectionModel.footerReuseClass)];
     if (footerView == nil) {
         footerView = [[sectionModel.footerReuseClass alloc]initWithReuseIdentifier: NSStringFromClass(sectionModel.footerReuseClass)];
     }

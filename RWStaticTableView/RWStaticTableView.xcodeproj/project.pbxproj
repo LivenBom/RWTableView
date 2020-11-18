@@ -135,11 +135,11 @@
 				33A68B8E2554ED5100D21A2D /* RWTableView.m */,
 				33A68BAB2554F04900D21A2D /* RWSectionModel.h */,
 				33A68BAC2554F04900D21A2D /* RWSectionModel.m */,
+				33A68BC7255521F500D21A2D /* RWCellViewModelProtocol.h */,
 				33EE3ECA2564BE0C00392E25 /* UITableViewCell+RWData.h */,
 				33EE3ECB2564BE0C00392E25 /* UITableViewCell+RWData.m */,
 				33EE3ED02564BEA400392E25 /* UITableViewHeaderFooterView+RWData.h */,
 				33EE3ED12564BEA400392E25 /* UITableViewHeaderFooterView+RWData.m */,
-				33A68BC7255521F500D21A2D /* RWCellViewModelProtocol.h */,
 			);
 			path = RWTableView;
 			sourceTree = "<group>";

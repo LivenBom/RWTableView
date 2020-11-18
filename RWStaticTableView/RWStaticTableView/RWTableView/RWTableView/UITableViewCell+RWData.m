@@ -10,7 +10,7 @@
 @implementation UITableViewCell (RWData)
 
 - (void)rw_setData:(id)data {
-    
+
 }
 
 @end
